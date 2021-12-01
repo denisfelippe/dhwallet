@@ -39,5 +39,4 @@
         app:layout_constraintBottom_toBottomOf="@id/image"
         tools:text="Leslee Moss" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
