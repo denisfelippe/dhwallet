@@ -19,4 +19,7 @@
     <string name="title_transfer">Transferência</string>
     <string name="search_hint">Busque por uma pessoa</string>
     <string name="title_contact">Contatos</string>
+    <string name="transaction_label_entrada">Entradas</string>
+    <string name="transaction_label_saida">Saídas</string>
+    <string name="transaction_title">Transações</string>
 </resources>

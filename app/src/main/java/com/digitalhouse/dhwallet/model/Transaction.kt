@@ -8,4 +8,5 @@ class Transaction(
     val title: String,
     val subtitle: String,
     val value: String,
+    val image: String,
 ): Parcelable
