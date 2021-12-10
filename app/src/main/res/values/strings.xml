@@ -22,4 +22,10 @@
     <string name="transaction_label_entrada">Entradas</string>
     <string name="transaction_label_saida">Saídas</string>
     <string name="transaction_title">Transações</string>
+    <string name="item_card_limit_label">Limite</string>
+    <string name="item_card_brand_visa">Visa</string>
+    <string name="item_card_num_generic">****</string>
+    <string name="item_card_name_label">NOME</string>
+    <string name="item_card_expire_label">VALIDADE</string>
+    <string name="title_transaction">Transações</string>
 </resources>

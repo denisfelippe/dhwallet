@@ -10,4 +10,5 @@
     <color name="bittersweet">#FFFB6969</color>
     <color name="apple">#FF45C232</color>
     <color name="mine_shaft">#FF3F3F3F</color>
+    <color name="mine_shaft_alpha">#CC3F3F3F</color>
 </resources>

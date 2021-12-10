@@ -40,7 +40,7 @@ class TransactionFragment : Fragment(R.layout.fragment_transaction) {
         }
 
         val transactionList = view.findViewById<RecyclerView>(R.id.transaction_transaction_list)
-        transactionList.adapter = TransactionAdapter(listTransaction) {
+        transactionList.adapter = TransactionAdapter(listTransaction, view.context.getString(R.string.title_transfer), true) {
             Log.d("TESTE", it.title)
         }
 

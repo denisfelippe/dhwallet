@@ -3,14 +3,20 @@
     <style name="TextView" parent="Theme.DHWallet">
         <item name="android:textColor">@color/mine_shaft</item>
     </style>
+    <style name="Title" parent="TextView">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
     <style name="Subtitle" parent="TextView">
         <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
     <style name="Subtitle2" parent="TextView">
         <item name="android:textSize">14sp</item>
     </style>
     <style name="Body1" parent="TextView">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/mine_shaft_alpha</item>
     </style>
     <style name="Headline6" parent="TextView">
         <item name="android:textSize">20sp</item>
@@ -37,7 +43,9 @@
         <item name="android:textSize">13sp</item>
     </style>
     <style name="Subtitle.Inverted.Small">
+        <item name="android:shadowColor">@android:color/transparent</item>
         <item name="android:textSize">7sp</item>
+        <item name="android:paddingBottom">4dp</item>
     </style>
     <style name="Body1.Inverted" parent="TextView.Inverted">
         <item name="android:textSize">15sp</item>

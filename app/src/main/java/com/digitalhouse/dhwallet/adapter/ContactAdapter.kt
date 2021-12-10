@@ -17,7 +17,7 @@ class ContactAdapter(private val items: List<Contact>): RecyclerView.Adapter<Rec
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         if (viewType == HEADER) {
-            return ContactHeaderViewHolder(inflater.inflate(R.layout.item_header_contact, parent, false))
+            return ContactHeaderViewHolder(inflater.inflate(R.layout.item_header, parent, false))
         }
 
         return ContactViewHolder(inflater.inflate(R.layout.item_contact, parent, false))
