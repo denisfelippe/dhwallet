@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CardInfoFragment"
+    android:background="@color/concrete">
+    <View
+        android:id="@+id/background_header"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/background_card_top"
+        app:layout_constraintBottom_toBottomOf="@id/guide_header"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_backward"
+        app:titleTextColor="@color/white">
+
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/foto"
+            tools:ignore="ContentDescription" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_header"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="223dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_start"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_end"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <TextView
+        android:id="@+id/card_info_limit_label"
+        style="@style/Subtitle.Inverted.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_card_limit_label"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@id/card_info_limit"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/card_info_limit"
+        style="@style/Title.Inverted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/card_info_number1"
+        app:layout_constraintStart_toStartOf="@id/card_info_limit_label"
+        app:layout_constraintTop_toBottomOf="@id/card_info_limit_label"
+        tools:text="R$18,24" />
+
+    <TextView
+        android:id="@+id/card_info_number1"
+        style="@style/Body2.Inverted"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_card_num_generic"
+        android:layout_marginTop="26dp"
+        app:layout_constraintBottom_toTopOf="@id/guide_header"
+        app:layout_constraintEnd_toStartOf="@id/card_info_number2"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/card_info_limit"
+        app:layout_constraintTop_toBottomOf="@id/card_info_limit" />
+
+    <TextView
+        android:id="@+id/card_info_number2"
+        style="@style/Body2.Inverted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_card_num_generic"
+        app:layout_constraintBottom_toBottomOf="@id/card_info_number1"
+        app:layout_constraintEnd_toStartOf="@id/card_info_number3"
+        app:layout_constraintStart_toEndOf="@id/card_info_number1"
+        app:layout_constraintTop_toTopOf="@id/card_info_number1" />
+
+    <TextView
+        android:id="@+id/card_info_number3"
+        style="@style/Body2.Inverted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_card_num_generic"
+        app:layout_constraintBottom_toBottomOf="@id/card_info_number1"
+        app:layout_constraintEnd_toStartOf="@id/card_info_number4"
+        app:layout_constraintStart_toEndOf="@id/card_info_number2"
+        app:layout_constraintTop_toTopOf="@id/card_info_number1" />
+
+    <TextView
+        android:id="@+id/card_info_number4"
+        style="@style/Body2.Inverted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/card_info_number1"
+        app:layout_constraintEnd_toStartOf="@id/guide_end"
+        android:layout_marginEnd="42dp"
+        app:layout_constraintStart_toEndOf="@id/card_info_number3"
+        app:layout_constraintTop_toTopOf="@id/card_info_number1"
+        tools:text="1289" />
+
+    <TextView
+        android:id="@+id/card_info_service"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/card_info_service"
+        app:layout_constraintTop_toBottomOf="@id/guide_header"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@id/guide_start" />
+
+    <Button
+        android:layout_marginTop="32dp"
+        android:id="@+id/btn_transfer"
+        app:layout_constraintTop_toBottomOf="@id/card_info_service"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:drawableTop="@drawable/ic_transfer"
+        android:background="@android:color/transparent"
+        android:text="@string/title_transfer" />
+
+    <Button
+        android:id="@+id/btn_transaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toTopOf="@id/btn_transfer"
+        app:layout_constraintStart_toEndOf="@id/btn_transfer"
+        android:drawableTop="@drawable/ic_transaction"
+        android:background="@android:color/transparent"
+        android:text="@string/transaction_title" />
+
+    <Button
+        android:id="@+id/btn_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toTopOf="@id/btn_transfer"
+        app:layout_constraintStart_toEndOf="@id/btn_transaction"
+        android:drawableTop="@drawable/ic_payment"
+        android:background="@android:color/transparent"
+        android:text="@string/card_info_payment" />
+</androidx.constraintlayout.widget.ConstraintLayout>

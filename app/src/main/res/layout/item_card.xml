@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/background_card"
-    android:minHeight="200dp"
+    android:minHeight="250dp"
     android:padding="24dp">
 
     <TextView
@@ -39,7 +39,7 @@
 
     <TextView
         android:id="@+id/item_card_number1"
-        style="@style/Subtitle.Inverted"
+        style="@style/Body2.Inverted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/item_card_num_generic"
@@ -51,7 +51,7 @@
 
     <TextView
         android:id="@+id/item_card_number2"
-        style="@style/Subtitle.Inverted"
+        style="@style/Body2.Inverted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/item_card_num_generic"
@@ -62,7 +62,7 @@
 
     <TextView
         android:id="@+id/item_card_number3"
-        style="@style/Subtitle.Inverted"
+        style="@style/Body2.Inverted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/item_card_num_generic"
@@ -73,7 +73,7 @@
 
     <TextView
         android:id="@+id/item_card_number4"
-        style="@style/Subtitle.Inverted"
+        style="@style/Body2.Inverted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@id/item_card_number1"

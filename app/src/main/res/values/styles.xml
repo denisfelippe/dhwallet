@@ -36,7 +36,7 @@
         <item name="android:textColor">@color/white</item>
     </style>
     <style name="Title.Inverted" parent="TextView.Inverted">
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">33sp</item>
         <item name="android:textStyle">bold</item>
     </style>
     <style name="Subtitle.Inverted" parent="TextView.Inverted">

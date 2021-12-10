@@ -18,19 +18,16 @@ class TransactionAdapter(
     private val items: MutableList<Transaction>,
     private val title: String,
     private val showArrow: Boolean = false,
-    private val action: (Transaction) -> Unit
+    private val action: () -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
 
         if (viewType == HEADER) {
-            return TransactionHeaderViewHolder(inflater.inflate(R.layout.item_header, parent, false))
+            return TransactionHeaderViewHolder(inflater.inflate(R.layout.item_header, parent, false), action)
         }
 
-        return TransactionViewHolder(
-            inflater.inflate(R.layout.item_transaction, parent, false),
-            action
-        )
+        return TransactionViewHolder(inflater.inflate(R.layout.item_transaction, parent, false))
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -51,9 +48,15 @@ class TransactionAdapter(
     }
 }
 
-class TransactionHeaderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+class TransactionHeaderViewHolder(view: View, action: () -> Unit) : RecyclerView.ViewHolder(view) {
     private val tituloView: TextView = view.findViewById(R.id.title)
     private val arrow: ImageView = view.findViewById(R.id.arrow)
+
+    init {
+        view.setOnClickListener {
+            action.invoke()
+        }
+    }
 
     fun bind(titulo: String, showArrow: Boolean) {
         tituloView.text = titulo
@@ -61,23 +64,13 @@ class TransactionHeaderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     }
 }
 
-class TransactionViewHolder(view: View, action: (Transaction) -> Unit) :
+class TransactionViewHolder(view: View) :
     RecyclerView.ViewHolder(view) {
     private val image: ImageView = view.findViewById(R.id.image)
     private val title: TextView = view.findViewById(R.id.item_transaction_title)
     private val subtitle: TextView = view.findViewById(R.id.item_transaction_subtitle)
-    private var itemCorrente: Transaction? = null
-
-    init {
-        view.setOnClickListener {
-            itemCorrente?.let {
-                action.invoke(it)
-            }
-        }
-    }
 
     fun bind(item: Transaction) {
-        itemCorrente = item
         Glide.with(image.context).load(item.image).circleCrop().into(image)
         title.text = item.title
         subtitle.text = item.subtitle

@@ -5,18 +5,7 @@
     <string name="content_description_credit_card_flag">bandeira visa</string>
     <string name="credit_card_title_name">Nome</string>
     <string name="credit_card_title_expire">VALIDADE</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_detail">DetailActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="title_transfer">Transferência</string>
+    <string name="title_transfer">Transferir</string>
     <string name="search_hint">Busque por uma pessoa</string>
     <string name="title_contact">Contatos</string>
     <string name="transaction_label_entrada">Entradas</string>
@@ -28,4 +17,6 @@
     <string name="item_card_name_label">NOME</string>
     <string name="item_card_expire_label">VALIDADE</string>
     <string name="title_transaction">Transações</string>
+    <string name="card_info_service">Serviços</string>
+    <string name="card_info_payment">Pagamento</string>
 </resources>

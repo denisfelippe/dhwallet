@@ -2,7 +2,6 @@ package com.digitalhouse.dhwallet
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -30,7 +29,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
         activity?.let {
-            it.window.statusBarColor = ContextCompat.getColor(view.context, R.color.concrete)
             cardList.apply {
                 adapter = CreditCardAdapter(fragmentList, it, ::sendToDetail)
                 offscreenPageLimit = 1
@@ -55,7 +53,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             },
             view.context.getString(R.string.transaction_title),
             true
-        ) {}
+        ) {
+            sendToTransaction()
+        }
+    }
+
+    private fun sendToTransaction() {
+        TODO("Not yet implemented")
     }
 
     private fun sendToDetail() {
