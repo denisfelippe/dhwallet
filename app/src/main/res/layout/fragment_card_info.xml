@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CardInfoFragment"
-    android:background="@color/concrete">
+    android:background="@color/concrete"
+    tools:context=".CardInfoFragment">
+
     <View
         android:id="@+id/background_header"
         android:layout_width="match_parent"
@@ -59,8 +60,8 @@
         style="@style/Subtitle.Inverted.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/item_card_limit_label"
         android:layout_marginStart="16dp"
+        android:text="@string/item_card_limit_label"
         app:layout_constraintBottom_toTopOf="@id/card_info_limit"
         app:layout_constraintStart_toStartOf="@id/guide_start"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
@@ -80,11 +81,11 @@
     <TextView
         android:id="@+id/card_info_number1"
         style="@style/Body2.Inverted"
-        android:layout_marginBottom="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/item_card_num_generic"
         android:layout_marginTop="26dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/item_card_num_generic"
         app:layout_constraintBottom_toTopOf="@id/guide_header"
         app:layout_constraintEnd_toStartOf="@id/card_info_number2"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -118,9 +119,9 @@
         style="@style/Body2.Inverted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="42dp"
         app:layout_constraintBottom_toBottomOf="@id/card_info_number1"
         app:layout_constraintEnd_toStartOf="@id/guide_end"
-        android:layout_marginEnd="42dp"
         app:layout_constraintStart_toEndOf="@id/card_info_number3"
         app:layout_constraintTop_toTopOf="@id/card_info_number1"
         tools:text="1289" />
@@ -130,42 +131,42 @@
         style="@style/Subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/card_info_service"
-        app:layout_constraintTop_toBottomOf="@id/guide_header"
         android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="@id/guide_start" />
+        android:text="@string/card_info_service"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@id/guide_header" />
 
     <Button
-        android:layout_marginTop="32dp"
         android:id="@+id/btn_transfer"
-        app:layout_constraintTop_toBottomOf="@id/card_info_service"
-        app:layout_constraintStart_toStartOf="@id/guide_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:drawableTop="@drawable/ic_transfer"
+        android:layout_marginTop="32dp"
         android:background="@android:color/transparent"
-        android:text="@string/title_transfer" />
+        android:drawableTop="@drawable/ic_transfer"
+        android:text="@string/title_transfer"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@id/card_info_service" />
 
     <Button
         android:id="@+id/btn_transaction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toTopOf="@id/btn_transfer"
-        app:layout_constraintStart_toEndOf="@id/btn_transfer"
-        android:drawableTop="@drawable/ic_transaction"
         android:background="@android:color/transparent"
-        android:text="@string/transaction_title" />
+        android:drawableTop="@drawable/ic_transaction"
+        android:text="@string/transaction_title"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toEndOf="@id/btn_transfer"
+        app:layout_constraintTop_toTopOf="@id/btn_transfer" />
 
     <Button
         android:id="@+id/btn_payment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toTopOf="@id/btn_transfer"
-        app:layout_constraintStart_toEndOf="@id/btn_transaction"
-        android:drawableTop="@drawable/ic_payment"
         android:background="@android:color/transparent"
-        android:text="@string/card_info_payment" />
+        android:drawableTop="@drawable/ic_payment"
+        android:text="@string/card_info_payment"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toEndOf="@id/btn_transaction"
+        app:layout_constraintTop_toTopOf="@id/btn_transfer" />
 </androidx.constraintlayout.widget.ConstraintLayout>

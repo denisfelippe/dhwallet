@@ -5,20 +5,16 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-
-private const val ARG_LIMIT = "arg_limit"
-private const val ARG_CARD_NUMBER = "arg_card_number"
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import androidx.transition.TransitionInflater
 
 class CardInfoFragment : Fragment(R.layout.fragment_card_info) {
-    private var limit: String? = null
-    private var cardNumber: String? = null
+    private val args: CardInfoFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            limit = it.getString(ARG_LIMIT)
-            cardNumber = it.getString(ARG_CARD_NUMBER)
-        }
+        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.explode)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,34 +25,31 @@ class CardInfoFragment : Fragment(R.layout.fragment_card_info) {
         val buttonTransfer = view.findViewById<Button>(R.id.btn_transfer)
         val buttonTransaction = view.findViewById<Button>(R.id.btn_transaction)
         val buttonPayment = view.findViewById<Button>(R.id.btn_payment)
+        val background = view.findViewById<View>(R.id.background_header)
 
-        limit?.let { limitView.text = it }
-        cardNumber?.let { numberView.text = it }
+        limitView.text = args.argLimit
+        numberView.text = args.argCardNumber
+        background.transitionName = view.context.getString(R.string.home_card_info_transition)
 
-        buttonTransfer.setOnClickListener { sendToButtonTransfer() }
-        buttonTransaction.setOnClickListener { sendToButtonTransaction() }
-        buttonPayment.setOnClickListener { sendToButtonPayment() }
+        buttonTransfer.setOnClickListener { navigateToTransfer() }
+        buttonTransaction.setOnClickListener { navigateToTransaction() }
+        buttonPayment.setOnClickListener { navigateToPayment() }
     }
 
-    private fun sendToButtonPayment() {
+    private fun navigateToPayment() {
         TODO("Not yet implemented")
     }
 
-    private fun sendToButtonTransaction() {
-        TODO("Not yet implemented")
+    private fun navigateToTransaction() {
+        val action = CardInfoFragmentDirections.actionCardInfoFragmentToTransactionFragment(
+            "R$ 45,35",
+            "R$ 536"
+        )
+        findNavController().navigate(action)
     }
 
-    private fun sendToButtonTransfer() {
-        TODO("Not yet implemented")
-    }
-
-    companion object {
-        fun newInstance(limit: String, cardNumber: String) =
-            CardInfoFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_LIMIT, limit)
-                    putString(ARG_CARD_NUMBER, cardNumber)
-                }
-            }
+    private fun navigateToTransfer() {
+        val action = CardInfoFragmentDirections.actionCardInfoFragmentToTransferFragment()
+        findNavController().navigate(action)
     }
 }

@@ -5,6 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 class Contact(
+    val id: Int,
     val image: String,
     val name: String,
     val type: ContactType
