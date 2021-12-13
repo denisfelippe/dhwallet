@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.digitalhouse.dhwallet.adapter.ContactAdapter
 import com.digitalhouse.dhwallet.model.Contact
 import com.digitalhouse.dhwallet.model.ContactType
+import com.digitalhouse.dhwallet.util.SharedPref
 
 class TransferFragment : Fragment(R.layout.fragment_transfer) {
 
@@ -15,6 +16,7 @@ class TransferFragment : Fragment(R.layout.fragment_transfer) {
 
         val listContact = MutableList(10) {
             Contact(
+                id = it,
                 image = "https://avatars.githubusercontent.com/u/1663531?v=4",
                 name = "Denis",
                 type = ContactType.IRMAO
@@ -22,6 +24,6 @@ class TransferFragment : Fragment(R.layout.fragment_transfer) {
         }
 
         val recycler = view.findViewById<RecyclerView>(R.id.recycler)
-        recycler.adapter = ContactAdapter(listContact)
+        recycler.adapter = ContactAdapter(listContact, SharedPref(view.context))
     }
 }

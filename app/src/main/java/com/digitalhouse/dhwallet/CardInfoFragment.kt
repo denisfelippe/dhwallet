@@ -5,21 +5,11 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-
-private const val ARG_LIMIT = "arg_limit"
-private const val ARG_CARD_NUMBER = "arg_card_number"
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 
 class CardInfoFragment : Fragment(R.layout.fragment_card_info) {
-    private var limit: String? = null
-    private var cardNumber: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            limit = it.getString(ARG_LIMIT)
-            cardNumber = it.getString(ARG_CARD_NUMBER)
-        }
-    }
+    private val args: CardInfoFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,8 +20,8 @@ class CardInfoFragment : Fragment(R.layout.fragment_card_info) {
         val buttonTransaction = view.findViewById<Button>(R.id.btn_transaction)
         val buttonPayment = view.findViewById<Button>(R.id.btn_payment)
 
-        limit?.let { limitView.text = it }
-        cardNumber?.let { numberView.text = it }
+        limitView.text = args.argLimit
+        numberView.text = args.argCardNumber
 
         buttonTransfer.setOnClickListener { sendToButtonTransfer() }
         buttonTransaction.setOnClickListener { sendToButtonTransaction() }
@@ -43,20 +33,15 @@ class CardInfoFragment : Fragment(R.layout.fragment_card_info) {
     }
 
     private fun sendToButtonTransaction() {
-        TODO("Not yet implemented")
+        val action = CardInfoFragmentDirections.actionCardInfoFragmentToTransactionFragment(
+            "R$ 45,35",
+            "R$ 536"
+        )
+        findNavController().navigate(action)
     }
 
     private fun sendToButtonTransfer() {
-        TODO("Not yet implemented")
-    }
-
-    companion object {
-        fun newInstance(limit: String, cardNumber: String) =
-            CardInfoFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_LIMIT, limit)
-                    putString(ARG_CARD_NUMBER, cardNumber)
-                }
-            }
+        val action = CardInfoFragmentDirections.actionCardInfoFragmentToTransferFragment()
+        findNavController().navigate(action)
     }
 }

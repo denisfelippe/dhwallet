@@ -18,8 +18,8 @@
         tools:src="@drawable/ic_spotify" />
 
     <TextView
-        style="@style/Subtitle"
         android:id="@+id/item_contact_title"
+        style="@style/Subtitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -30,13 +30,23 @@
         tools:text="Leslee Moss" />
 
     <TextView
-        style="@style/Body1"
         android:id="@+id/item_contact_subtitle"
+        style="@style/Body1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/item_contact_title"
-        app:layout_constraintStart_toStartOf="@id/item_contact_title"
         app:layout_constraintBottom_toBottomOf="@id/image"
+        app:layout_constraintStart_toStartOf="@id/item_contact_title"
+        app:layout_constraintTop_toBottomOf="@id/item_contact_title"
         tools:text="Leslee Moss" />
+
+    <CheckBox
+        android:id="@+id/check_fav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:buttonCompat="@drawable/background_fav"
+        android:buttonTint="@color/color_fav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/image"
+        app:layout_constraintBottom_toBottomOf="@id/image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
