@@ -27,8 +27,8 @@ class CardInfoFragment : Fragment(R.layout.fragment_card_info) {
         val buttonPayment = view.findViewById<Button>(R.id.btn_payment)
         val background = view.findViewById<View>(R.id.background_header)
 
-        limitView.text = args.argLimit
-        numberView.text = args.argCardNumber
+        limitView.text = args.argCard.limit
+        numberView.text = args.argCard.number
         background.transitionName = view.context.getString(R.string.home_card_info_transition)
 
         buttonTransfer.setOnClickListener { navigateToTransfer() }

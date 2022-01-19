@@ -1,0 +1,45 @@
+[
+  {
+    "type": "TITLE",
+    "title": "Hoje"
+  },
+  {
+    "type": "CONTENT",
+    "title": "Spotify",
+    "subtitle": "Pagamento",
+    "value": "- R$53,40",
+    "image": "https://cdn.icon-icons.com/icons2/2429/PNG/512/spotify_logo_icon_147234.png"
+  },
+  {
+    "type": "CONTENT",
+    "title": "Spotify",
+    "subtitle": "Pagamento",
+    "value": "- R$53,40",
+    "image": "https://cdn.icon-icons.com/icons2/2429/PNG/512/spotify_logo_icon_147234.png"
+  },
+  {
+    "type": "CONTENT",
+    "title": "Spotify",
+    "subtitle": "Devolução",
+    "value": "R$53,40",
+    "image": "https://cdn.icon-icons.com/icons2/2429/PNG/512/spotify_logo_icon_147234.png"
+  },
+  {
+    "type": "CONTENT",
+    "title": "Spotify",
+    "subtitle": "Pagamento",
+    "value": "- R$53,40",
+    "image": "https://cdn.icon-icons.com/icons2/2429/PNG/512/spotify_logo_icon_147234.png"
+  },
+  {
+    "type": "TITLE",
+    "title": "Ontem"
+  },
+  {
+    "type": "CONTENT",
+    "title": "Spotify",
+    "subtitle": "Pagamento",
+    "value": "- R$53,40",
+    "image": "https://cdn.icon-icons.com/icons2/2429/PNG/512/spotify_logo_icon_147234.png"
+  }
+]

@@ -21,8 +21,7 @@
         android:name="com.digitalhouse.dhwallet.CardInfoFragment"
         android:label="fragment_card_info"
         tools:layout="@layout/fragment_card_info" >
-        <argument android:name="arg_limit" />
-        <argument android:name="arg_card_number" />
+        <argument android:name="arg_card" app:argType="com.digitalhouse.dhwallet.model.Card" />
         <action
             android:id="@+id/action_cardInfoFragment_to_transferFragment"
             app:destination="@id/transferFragment" />

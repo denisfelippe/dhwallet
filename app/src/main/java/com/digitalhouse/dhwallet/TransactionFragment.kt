@@ -9,6 +9,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 import com.digitalhouse.dhwallet.adapter.TransactionAdapter
 import com.digitalhouse.dhwallet.model.Transaction
+import com.digitalhouse.dhwallet.model.TransactionContent
 
 class TransactionFragment : Fragment(R.layout.fragment_transaction) {
 
@@ -17,14 +18,14 @@ class TransactionFragment : Fragment(R.layout.fragment_transaction) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val listTransaction = MutableList(20) {
-            Transaction(
+        val listTransaction: MutableList<Transaction> = mutableListOf(
+            TransactionContent(
                 "Spotify",
                 "Pagamento",
                 "- R$53,40",
                 "https://cdn.icon-icons.com/icons2/2429/PNG/512/spotify_logo_icon_147234.png"
             )
-        }
+        )
 
         val transactionList = view.findViewById<RecyclerView>(R.id.transaction_transaction_list)
         transactionList.adapter = TransactionAdapter(listTransaction, view.context.getString(R.string.title_transfer), true) {
