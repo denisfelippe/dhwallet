@@ -18,7 +18,7 @@ class TransactionFragment : Fragment(R.layout.fragment_transaction) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val listTransaction: MutableList<Transaction> = mutableListOf(
+        val listTransaction: List<Transaction> = listOf(
             TransactionContent(
                 "Spotify",
                 "Pagamento",
@@ -28,9 +28,12 @@ class TransactionFragment : Fragment(R.layout.fragment_transaction) {
         )
 
         val transactionList = view.findViewById<RecyclerView>(R.id.transaction_transaction_list)
-        transactionList.adapter = TransactionAdapter(listTransaction, view.context.getString(R.string.title_transfer), true) {
-            sendToTransfer()
-        }
+        transactionList.adapter = TransactionAdapter(
+            listTransaction,
+            view.context.getString(R.string.title_transfer),
+            true,
+            ::sendToTransfer
+        ) {}
 
         val entrada = view.findViewById<TextView>(R.id.transaction_entrada)
         val saida = view.findViewById<TextView>(R.id.transaction_saida)

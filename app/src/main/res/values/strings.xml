@@ -27,5 +27,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home_card_info_transition">home_card_info</string>
     <string name="btn_scan">Ler código</string>
+    <string name="share_contact">
+        Olá, essa esses são seus dados:\nTransação: %1$s\nDo tipo: %2$s\nNo valor de: %3$s
+    </string>
     <!-- endregion -->
 </resources>

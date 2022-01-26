@@ -19,10 +19,11 @@ private const val CONTENT = 1
 private const val TRANSACTION_HEADER = 2
 
 class TransactionAdapter(
-    private val items: MutableList<Transaction>,
+    private val items: List<Transaction>,
     private val title: String,
     private val showArrow: Boolean = false,
-    private val action: () -> Unit
+    private val action: () -> Unit,
+    private val detailAction: (TransactionContent) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -30,7 +31,7 @@ class TransactionAdapter(
         return when (viewType) {
             HEADER -> TransactionHeaderViewHolder(inflater.inflate(R.layout.item_header, parent, false), action)
             TRANSACTION_HEADER -> TransactionDateHeaderViewHolder(inflater.inflate(R.layout.item_header, parent, false))
-            else -> TransactionViewHolder(inflater.inflate(R.layout.item_transaction, parent, false))
+            else -> TransactionViewHolder(inflater.inflate(R.layout.item_transaction, parent, false), detailAction)
         }
     }
 
@@ -84,15 +85,25 @@ class TransactionDateHeaderViewHolder(view: View) : RecyclerView.ViewHolder(view
     }
 }
 
-class TransactionViewHolder(view: View) :
+class TransactionViewHolder(view: View, detailAction: (TransactionContent) -> Unit) :
     RecyclerView.ViewHolder(view) {
     private val image: ImageView = view.findViewById(R.id.image)
     private val title: TextView = view.findViewById(R.id.item_transaction_title)
     private val subtitle: TextView = view.findViewById(R.id.item_transaction_subtitle)
+    private var currentContent: TransactionContent? = null
+
+    init {
+        view.setOnClickListener {
+            currentContent?.let { transaction ->
+                detailAction.invoke(transaction)
+            }
+        }
+    }
 
     fun bind(item: TransactionContent) {
         Glide.with(image.context).load(item.image).circleCrop().into(image)
         title.text = item.title
         subtitle.text = item.subtitle
+        currentContent = item
     }
 }
