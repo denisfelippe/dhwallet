@@ -1,8 +1,7 @@
 package com.digitalhouse.dhwallet.model
 
 import android.os.Parcelable
-import androidx.annotation.DrawableRes
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 sealed class Transaction : Parcelable
 
